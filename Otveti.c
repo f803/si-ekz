@@ -1,3 +1,29 @@
+//20 Стек. Примеры. Основные операции над стеком.
+
+/*
+
+*/
+
+//21 Создание стека. Функция создания нового стека.
+
+typedef struct Node{
+  char val;
+  struct Node *next;
+}NODE,*pNODE;
+
+typedef struct Stack{
+  pNODE top;
+  int len;
+}STACK,*pSTACK;
+
+pSTACK createstack(){
+  pSTACK ps;
+  ps = (pSTACK)malloc(sizeof(STACK));
+    ps->top = NULL;
+    ps->len = 0;
+    return ps;
+}
+
 // 22 Функция проверки наполненности стека.
 
 int isempty(pSTACK ps){
