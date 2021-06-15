@@ -188,6 +188,7 @@ Nуровней = log2(Nузлов + 1)
 · запоминается адрес возврата в вызывающую функцию;
 · управление передается вызванной функции.
 
+// вычисление факториала
 double Rec_Fact(int n){
   if (n <= 1)
     return 1.0;
@@ -195,6 +196,7 @@ double Rec_Fact(int n){
     return Rec_Fact(n-1)*n;
 }
 
+// вычисление чисел Фибоначи
 unsigned long fib(int n){
   if(n==0 || n==1)
     return 1;
@@ -202,6 +204,7 @@ unsigned long fib(int n){
     return fib(n-1)+fib(n-2);
 }
 
+// возведения вещественного числа Х в целую степень N>=0
 double Rec_step(float a,int b){
   if(b <= 0) 
     return 1.0;
@@ -209,6 +212,7 @@ double Rec_step(float a,int b){
     return Rec_step(a,b-1)*a;
 }
 
+// быстрого возведения вещественного числа Х в целую степень N>=0
 double rec_degree(double a,int b){
   double r;
   if(!b)
@@ -219,6 +223,7 @@ double rec_degree(double a,int b){
     return a*rec_degree(a,b-1);
 }
 
+// вычисление НОД
 int NOD_rec(int a,int b){
   if(!(a%b))
     return b;
@@ -226,6 +231,7 @@ int NOD_rec(int a,int b){
     return NOD_rec(b,a%b);
 }
 
+// печати числа в виде строки символа
 void printd(int k){
   if(k<0){
     putchar('-');
@@ -235,6 +241,7 @@ void printd(int k){
   putchar(k%10 +'0');
 }
 
+// вывода на печать символов строки в опратном порядке
 void Reverse(){
   int ch;
   if((ch=getchar()) !='\r'){
@@ -243,6 +250,7 @@ void Reverse(){
   }
 }
 
+// вычисление суммы элементов массива
 int sum(int *s,int n){
   if(n==1)
     return s[0];
