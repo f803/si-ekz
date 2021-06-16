@@ -26,6 +26,12 @@
 Объем работы алгоритма оценивается количеством производимых сравнений и обменов.
  
 //3 Сортировка методом "Пузырька".
+	
+void swap(int *x, int *y){
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+  }
   
 void Bubble(int *arr){
     int i,j,c=0,p=0;
@@ -63,7 +69,7 @@ void Shaker(int *arr){
 
 //5 Сортировка методом простого выбора.
 
-void SelectionSort(int *arr){
+ void SelectionSort(int *arr){
     int i,j,im,temp,c=0,p=0;
     for(i=0;i<size-1;i++){
       im=i;
@@ -81,7 +87,7 @@ void SelectionSort(int *arr){
 
 //6 Сортировка методом простого включения.
 
-void InsertSort(int *arr){
+  void InsertSort(int *arr){
     int i,j,temp,c=0;
     double p=0;
     for(i=1;i<size;i++){
@@ -99,22 +105,22 @@ void InsertSort(int *arr){
 //7 Сортировка Шелла.
 
 void Shella(int *arr){
-		int i,j,temp,step = size/2,c=0,p=0;
-		while(step>0){
-			for(i=0;i<(size - step);i++){c++;
-			j=i;
-			while(j>=0 && arr[j]>arr[j+step]){
-				c++;p++;
-				temp=arr[j];
-				arr[j]=arr[j+step];
-				arr[j+step]=temp;
-				j--;
-			}
-			}
-			step /=2;
+	int i,j,temp,step = size/2,c=0,p=0;
+	while(step>0){
+	  for(i=0;i<(size - step);i++){c++;
+	    j=i;
+	    while(j>=0 && arr[j]>arr[j+step]){
+		c++;p++;
+		temp=arr[j];
+		arr[j]=arr[j+step];
+		arr[j+step]=temp;
+		j--;
 		}
-		printf("compar=%d,reshuffle=%d\n",c,p);
+	  }
+	step /=2;
 	}
+  printf("compar=%d,reshuffle=%d\n",c,p);
+}
 
 //8 Метод цепочек.
 
@@ -188,6 +194,16 @@ struct point {
 
 Каждый элемент списка содержит ключ, который идентифицирует этот элемент. Ключ обычно бывает либо целым числом, либо строкой.
 	
+typedef struct Node{
+  int val;
+  struct Node *next;
+}NODE,*pNODE;
+
+typedef struct List{
+  pNODE top;
+  int len;
+}LIST,*pLIST;
+
 //создание нового списка
 pLIST create_list(){
   pLIST pL;
